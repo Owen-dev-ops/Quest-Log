@@ -1,0 +1,13 @@
+{
+    "name": "Quest Log",
+
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+
+    "containerEnv": {
+        "FLASK_DEBUG": "1"
+    },
+
+    "postCreateCommand": "pip3 install -r requirements.txt"
+}

@@ -1,0 +1,19 @@
+/* Style Sheet for Quest Log */
+
+* {
+    font-family: "cinzel-decorative-regular", sans-serif; 
+}
+
+.flash_error {
+    color: red;
+}
+
+.flash_success {
+    color: green;
+}
+
+.center_element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
