@@ -4,6 +4,12 @@
     font-family: "cinzel-decorative-regular", sans-serif; 
 }
 
+.center_element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .flash_error {
     color: red;
 }
@@ -12,8 +18,11 @@
     color: green;
 }
 
-.center_element {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+form {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login_page_divs {
+    width: 18rem;
 }

@@ -7,4 +7,20 @@
 
     <h1>TODO</h1>
 
-{% endblock % } 
+    <div class="card mx-auto login_page_divs">
+        <div class="card-body">
+            <form action="/login" method="post" class="center_element">
+                <label for="login_username" class="form-label">Username</label>
+                <input name="username" type="text" required placeholder="firebreathingwizard..." maxlength="26" autocomplete="off" id="login_username" class="form-control">
+            
+                <label for="login_password" class="form-label">Password</label>
+                <input name="password" type="password" required placeholder="notsosecretpassword..." maxlength="64" autocomplete="off" id="login_password" class="form-control">
+            
+                <br>
+            
+                <button type="submit" class="btn btn-success">Login</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %} 

@@ -13,8 +13,8 @@ app = Flask(__name__)
 load_dotenv()
 
 # Setup cookie configuration.
-app.config["SESION_TYPE"] = "filesystem"
-app.config["SECRET_KEY"] = os.environ.get["APP_SECRET_KEY"]
+app.config["SESSION_TYPE"] = "filesystem"
+app.config["SECRET_KEY"] = os.environ.get("APP_SECRET_KEY")
 app.config["SESSION_PERMANENT"] = False
 
 # Initializes flask-session.
@@ -102,8 +102,8 @@ def register():
 
 # Close db connection after every request.
 @app.teardown_request
-def close_db():
-    db = g.db.pop("db", None)
+def close_db(exception):
+    db = g.pop("db", None)
     if db is not None:
         db.close()
     
