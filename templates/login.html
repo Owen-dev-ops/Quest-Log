@@ -7,19 +7,23 @@
 
     <h1>TODO</h1>
 
-    <div class="card mx-auto login_page_divs">
-        <div class="card-body">
-            <form action="/login" method="post" class="center_element">
-                <label for="login_username" class="form-label">Username</label>
-                <input name="username" type="text" required placeholder="firebreathingwizard..." maxlength="26" autocomplete="off" id="login_username" class="form-control">
-            
-                <label for="login_password" class="form-label">Password</label>
-                <input name="password" type="password" required placeholder="notsosecretpassword..." maxlength="64" autocomplete="off" id="login_password" class="form-control">
-            
+    <div class="center_element m-auto login_page_divs">
+        <div class="card">
+            <div class="card-body">
+                <h1>Login</h1>
+
                 <br>
+                
+                <form action="/login" method="post" class="center_element">
+                    <input name="username" type="text" required placeholder="username" maxlength="26" autocomplete="off" id="login_username" class="form-control">
+                    <p></p>
+                    <input name="password" type="password" required placeholder="password" maxlength="64" autocomplete="off" id="login_password" class="form-control">
             
-                <button type="submit" class="btn btn-success">Login</button>
-            </form>
+                    <br>
+            
+                    <button type="submit" class="btn btn-success">Login</button>
+                </form>
+            </div>
         </div>
     </div>
 

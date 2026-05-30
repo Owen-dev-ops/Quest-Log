@@ -5,13 +5,19 @@
 
 {% block main %}
 
-    <div class="center_element">
-        <h1>Welcome new user</h1>
-        <form action="/register" method="post">
-            <input name="username" type="text" required placeholder="username" maxlength="26" autocomplete="off">
-            <input name="password" type="password" required placeholder="password" maxlength="64" autocomplet="off">
-            <input name="confirmation" type="password" required placeholder="confirm password" maxlength="64" autocomplete="off">
-        </form>
+    <div class="center_element m-auto login_page_divs">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="center_element">Welcome new user</h1>
+                <br>
+                <form action="/register" method="post" class="center_element">
+                    <input name="username" type="text" required placeholder="username" class="small_margin" maxlength="26" autocomplete="off">
+                    <input name="password" type="password" required placeholder="password" maxlength="64" autocomplet="off">
+                    <input name="confirmation" type="password" required placeholder="confirm password" maxlength="64" autocomplete="off">
+                    <button type="sumbit" class="btn btn-success">Register</button>
+                </form>
+            </div>
+        </div>
     </div>
 
 {% endblock %}

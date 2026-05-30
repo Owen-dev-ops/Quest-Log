@@ -28,7 +28,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
         return render_template("login.html")
@@ -51,12 +51,12 @@ def login():
     
     if user_info is None:
         flash("No user detected")
-        return render_template("index.html")
+        return render_template("login.html")
     
     try:
         ph.verify(user_info["password"], password)
         session["user_id"] = user_info["id"]
-        return redirect(url_for("/"))
+        return redirect(url_for("index"))
     except:
         flash("Incorrect password")
         return render_template("login.html")
@@ -94,7 +94,7 @@ def register():
     ph = PasswordHasher()
 
     # Create new user.
-    g.db.execute("INSERT INTO users (username, password) VALUES (?, ?)"), (username, ph.hash(password))
+    g.db.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, ph.hash(password)))
 
     flash("Registered Successfully", category="flash_success")
     return redirect(url_for("login"))

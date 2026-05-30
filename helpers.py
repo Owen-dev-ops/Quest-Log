@@ -16,5 +16,5 @@ def login_required(f):
 def connect_to_db():
     if "db" not in g:
         g.db = sqlite3.connect("quest_log.db", isolation_level=None)
-        g.db.row_factory = sqlite3.row
+        g.db.row_factory = sqlite3.Row
     return

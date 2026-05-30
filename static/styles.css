@@ -23,6 +23,31 @@ form {
     gap: 1rem;
 }
 
+h1 {
+    text-align: center;
+}
+
 .login_page_divs {
     width: 18rem;
+    height: 30rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MARGINS */
+
+.tiny_margin_bottom {
+    margin-bottom: -1rem;
+}
+
+.small_margin {
+    margin: 10px;
 }
