@@ -1,9 +1,5 @@
 /* Style Sheet for Quest Log */
 
-* {
-    font-family: "cinzel-decorative-regular", sans-serif; 
-}
-
 .center_element {
     display: flex;
     justify-content: center;
@@ -27,10 +23,19 @@ h1 {
     text-align: center;
 }
 
+html, body {
+    background-color: #1E1E1E;
+    font-family: "cinzel-decorative-regular", sans-serif;
+}
+
 .login_page_divs {
     width: 18rem;
     height: 30rem;
 }
+
+
+
+
 
 
 
