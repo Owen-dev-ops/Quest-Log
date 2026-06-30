@@ -1,17 +1,30 @@
 /* Style Sheet for Quest Log */
 
-/* .center_element {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+:root {
+    /* Color Theme: Tavern/Campaign Room */
+
+    --background: rgb(18, 14, 10);
+    --surface: rgb(31, 24, 17);
+    --raised-surface: rgba(44, 34, 24);
+    --border: rgb(82, 64, 40);
+    --text-primary: rgb(232, 216, 185);
+    --text-secondary: rgb(158, 140, 110);
+    --accent: rgb(214, 120, 28);
+    --accent-glow: rgb(255, 160, 60);
+    --success: rgb(80, 160, 90);
+    --warning: rgb(185, 55, 55);
+    --inactive: rgb(55, 60, 48);
+    --header-font: 'Cinzel';
+    --text-font: 'Port Lligat Sans';
+}
+
 
 .flash_error {
-    color: red;
+    color: var(--warning);
 }
 
 .flash_success {
-    color: green;
+    color: var(--success);
 }
 
 form {
@@ -24,13 +37,11 @@ h1 {
 }
 
 html, body {
-    background-color: #1E1E1E;
-    font-family: "cinzel-decorative-regular", sans-serif;
+    background-color: var(--background);
     min-height: 100vh;
-
+    
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .login_page_divs {
@@ -39,21 +50,116 @@ html, body {
 }
 
 
+/* Index Main View (Styling for Lab View, Calendar, and Tavern Board View on index.html). */
 
+.index_main_view {
+    display: flex;
+    justify-content: space-between; 
+    min-width: 100vw;
+} 
 
+/* Lab View */
+
+#toggle_lab {
+    display: none; 
+}
+
+#toggle_lab:checked ~ .lab_view {
+    width: 286px;
+    border: solid;
+    border-color: var(--border);
+    background-color: var(--raised-surface);
+}
+
+#toggle_lab:checked ~ .lab_view button {
+    width: 280px; 
+    border-radius: 0 35px 0 0;
+}
+
+#toggle_lab:checked ~ .lab_view .lab_goals a {
+    visibility: visible;
+    opacity: 1;
+    width: 280px;
+}
+
+#toggle_lab:checked ~ .calendar {
+    margin: 20px;
+} 
+
+.lab_view {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 40px 40px 0;
+    transition: all .4s; 
+    font-family: var(--text-font); 
+}
+
+.lab_view button {
+    height: 40px; 
+    border-radius: 0 40px 40px 0;
+    width: 120px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    color: var(--text-primary);
+    background-color: var(--background);
+    border: outset;
+    border-color: var(--accent);
+    font-size: 16px; 
+    transition: all .4s; 
+    font-family: var(--header-font);
+}
+
+.lab_view button:active {
+    border: inset;
+}
+
+.lab_goals {
+    display: flex;
+    flex-direction: column;
+}
+
+#lab_page_link {
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; 
+    width: 120px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    border: outset;
+    background-color: var(--background);
+    border-color: var(--accent);
+    text-decoration: none;
+    font-size: 16px; 
+    color: var(--text-primary);
+    transition: all .4s;
+    font-family: var(--header-font);
+}
+
+#lab_page_link i {
+    margin-right: 15px;
+}
+
+#lab_page_link:active {
+    border: inset;
+}
 
 
 /* CALENDAR */
-
 .calendar {
     width: 380px;
     height: auto;
     display: flex;
     flex-direction: column;
     padding: 10px;
-    background-color: #fff;
+    background-color: var(--text-primary);
+    border: solid;
+    border-color: var(--border);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: all .4s;
+    font-family: var(--text-font);
 } 
 
 .header {
@@ -61,6 +167,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    font-family: var(--header-font);
 }
 
 .monthYear {
@@ -70,7 +177,6 @@ html, body {
 } 
 
 .header button {
-    display: flex;
     align-items: center;
     justify-content: center;
     border: none;
@@ -129,6 +235,97 @@ html, body {
     color: #fff;
 }
 
+
+/* Tavern Board View */
+
+#toggle_tavern {
+    display: none;
+}
+
+#toggle_tavern:checked ~ .tavern_view {
+    width: 286px; 
+    background-color: var(--raised-surface);
+    border: solid;
+    border-color: var(--border);
+}
+
+#toggle_tavern:checked ~ .tavern_view button {
+    width: 280px; 
+    border-radius: 35px 0 0 0;
+}
+
+#toggle_tavern:checked ~ .tavern_view .tavern_task a {
+    opacity: 1;
+    visibility: visible;
+    width: 280px;
+}
+
+#toggle_tavern:checked ~ .calendar {
+    margin: 20px;
+} 
+
+.tavern_view {
+    width: 120px;
+    font-family: var(--text-font);
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px 0 0 40px;
+    transition: all 0.4s; 
+}
+
+.tavern_view button {
+    height: 40px;
+    border-radius: 40px 0 0 40px;
+    width: 120px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    border: outset;
+    font-size: 16px;
+    transition: all 0.4s;
+    border-color: var(--accent);
+    color: var(--text-primary);
+    font-family: var(--header-font);
+    background-color: var(--background);
+    margin-left: auto;
+}
+
+.tavern_view button:active {
+    border: inset;
+}
+
+.tavern_task {
+    display: flex;
+    flex-direction: column;
+}
+
+#tavern_page_link {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 40px;
+    font-family: var(--header-font);
+    color: var(--text-primary);
+    background-color: var(--background);
+    border: outset;
+    border-color: var(--accent);
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.4s;
+    box-shadow: 0 0 10px 0 rgb(255, 255, 255, 0.3);
+    margin-left: auto;
+}
+
+#tavern_page_link i {
+    margin-left: 15px;
+}
+
+#tavern_page_link:active {
+    border: inset;
+}
+
+/* End of styling for Index Main View */
 
 
 /* MARGINS */

@@ -4,28 +4,58 @@
 
 
 {% block main %}
-
-    <div class="calendar">
-        <div class="header">
-            <button id="prevBtn">
-                <i class="fa-solid fa-chevron-left"></i>
+    <!-- Index Main View. Holds The Lab view tab on the left side of the screen, the Calendar view in the middle and The Tavern Board view tab on the right. -->
+    <div class="index_main_view">
+        <input type="checkbox" id="toggle_lab">
+        <input type="checkbox" id="toggle_tavern">
+        <!-- Lab View -->
+        <div class="lab_view">
+            <button onclick="document.getElementById('toggle_lab').click()">
+                Lab
             </button>
-            <div class="monthYear" id="monthYear"></div>
-            <button id="nextBtn">
-                <i class="fa-solid fa-chevron-right"></i>
+            <!-- When user clicks the button to extend the lab view, the goals will be inserted here. -->
+            <div class="lab_goals">
+                <a id="lab_page_link" href="{{ url_for('lab') }}">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    To Lab
+                </a>
+            </div>
+        </div>
+        <!-- Calendar View -->
+        <div class="calendar">
+            <div class="header">
+                <button id="prevBtn">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="monthYear" id="monthYear"></div>
+                <button id="nextBtn">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="days">
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day">Wed</div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+                <div class="day">Sat</div>
+                <div class="day">Sun</div>
+            </div>
+            <div class="dates" id="dates"></div>
+        </div>
+        <!-- Tavern Board View -->
+        <div class="tavern_view">
+            <button onclick="document.getElementById('toggle_tavern').click()">
+                Tavern
             </button>
-        </div>
-        <div class="days">
-            <div class="day">Mon</div>
-            <div class="day">Tue</div>
-            <div class="day">Wed</div>
-            <div class="day">Thu</div>
-            <div class="day">Fri</div>
-            <div class="day">Sat</div>
-            <div class="day">Sun</div>
-        </div>
-        <div class="dates" id="dates"></div>
-    </div> 
-
+            <!-- Tavern task will show here when the user clicks the Tavern View toggle. -->
+            <div class="tavern_task">
+                <a id="tavern_page_link" href="{{ url_for('tavern') }}">
+                    To Tavern
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </div> 
+    </div>
 
 {% endblock %}

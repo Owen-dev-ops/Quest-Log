@@ -2,6 +2,7 @@
 
 /* INDEX */
 
+// Update calendar.
 const monthYearElement = document.getElementById("monthYear");
 const datesElement = document.getElementById("dates");
 const prevBtn = document.getElementById("prevBtn");
@@ -54,3 +55,19 @@ nextBtn.addEventListener('click', () => {
 })
 
 updateCalendar();
+
+
+// View day
+// TODO: Create an add/schedule task functionality before doing this.
+
+/*
+
+Query Select each day in this month by the class "date". Then on click:
+    make the calendar display none and place a div in its exact location. (div will show a view of the day the user clicked on)
+    add event listener to the back button which will be in the top left. On click:
+        set div display to none and calendar back to block.
+    
+    run a json fetch request and get all task for this day from the database (may need to add an id for the select statement for this given date. If so add this with updateCalendar upon updating datesHTML.)
+    use the values from the request to fill in the view
+ 
+*/

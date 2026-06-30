@@ -100,6 +100,16 @@ def register():
     return redirect(url_for("login"))
 
 
+@app.route("/lab", methods=["GET", "POST"])
+def lab():
+    return render_template('lab.html')
+
+
+@app.route("/tavern", methods=["GET", "POST"])
+def tavern():
+    return render_template('tavernboard.html')
+
+
 # Close db connection after every request.
 @app.teardown_request
 def close_db(exception):
